@@ -1,6 +1,5 @@
 import React from 'react'
 import './Hero.css'
-import me100 from '../../assets/me100.png'
 import last from '../../assets/last.png'
 import { Link } from 'react-scroll'
 import Achievement from '../../commons/Achievement'
@@ -42,12 +41,7 @@ const Hero = () => {
             <img src={last} alt="me" />
         </div>
       </div>
-      <div className="achievement-cluster">
-        <div className="wrapper">
-          <Achievement />
-        </div>
-      </div>
-    </section>
+     </section>
   )
 }
 
