@@ -1,6 +1,7 @@
 import React from 'react'
 import './Hero.css'
 import me100 from '../../assets/me100.png'
+import m3 from '../../assets/m3.jpg'
 import { Link } from 'react-scroll'
 import Achievement from '../../commons/Achievement'
 
@@ -38,7 +39,7 @@ const Hero = () => {
           </div>
         </div>
         <div className="column hero-image" data-aos='fade-left' data-aos-delay='200'>
-          <img src="../../assets/last.png" alt="me" />
+            <img src={m3} alt="me" />
         </div>
       </div>
       <div className="achievement-cluster">
