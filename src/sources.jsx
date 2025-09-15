@@ -9,6 +9,7 @@ import billing from "./assets/billing.png";
 import hrms from "./assets/hrms.png";
 import crm from "./assets/crm.png";
 import account from "./assets/account.png";
+import payment from "./assets/payment.png";
 import { IoMdAnalytics } from "react-icons/io";
 import { IoCallOutline, IoLocationOutline } from "react-icons/io5";
 import { GrUserExpert } from "react-icons/gr";
@@ -215,15 +216,16 @@ export const projects = [
 
     The system was built with scalability in mind and optimized for mobile responsiveness, ensuring a seamless experience across devices. It also supports offline-first functionality for field agents managing properties in low-connectivity areas.
   `,
+    demoLink: "https://dangopay.dangotechconcepts.com/",
     stack: [
       {
         name: "ReactJs",
-        icon: <DiReact />,
+        icon: <DiReact />, 
         iconColor: "skyblue",
       },
       {
         name: "NodeJs",
-        icon: <FaNodeJs />,
+        icon: <FaNodeJs />, 
         iconColor: "green",
       },
       {
@@ -232,7 +234,7 @@ export const projects = [
       },
       {
         name: "MongoDB",
-        icon: <SiMongodb />,
+        icon: <SiMongodb />, 
         iconColor: "limegreen",
       },
     ],
@@ -399,6 +401,41 @@ Built with an intuitive UI and optimized for mobile responsiveness, this CRM emp
       },
     ],
   },
+  {
+    id: 7,
+    title: "Utility Payments",
+    image: payment,
+    category: "Web",
+    description: `Developed a comprehensive Utility Payments platform to streamline bill payment for users. The platform allows users to pay their utility bills (water) seamlessly and securely.
+
+Key Features:
+- User-friendly interface for easy navigation
+- Secure payment gateway integration
+- Real-time payment tracking and notifications
+- Bill reminders and history
+- Multi-language support
+- Admin dashboard for managing utilities and users
+
+Built with a focus on security and user experience, this platform ensures that users can manage their utility payments with confidence and ease.`,
+    demoLink: "https://dangopay.dangotechconcepts.com/#/make-utility-payment",
+    stack: [
+      {
+        name: "ReactJs",
+        icon: <DiReact />,
+        iconColor: "skyblue",
+      },
+      {
+        name: "TailwindCSS",
+        icon: <SiAdobexd />,
+        iconColor: "skyblue",
+      },
+      {
+        name: "ShadcnUI",
+        icon: <SiAdobexd />,
+        iconColor: "skyblue",
+      },
+    ],
+  }
 ];
 
 export const clients = [
