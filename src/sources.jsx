@@ -10,6 +10,7 @@ import hrms from "./assets/hrms.png";
 import crm from "./assets/crm.png";
 import account from "./assets/account.png";
 import payment from "./assets/payment.png";
+import recipe from "./assets/recipe.png";
 import { IoMdAnalytics } from "react-icons/io";
 import { IoCallOutline, IoLocationOutline } from "react-icons/io5";
 import { GrUserExpert } from "react-icons/gr";
@@ -435,7 +436,41 @@ Built with a focus on security and user experience, this platform ensures that u
         iconColor: "skyblue",
       },
     ],
-  }
+  },
+  {
+    id: 8,
+    title: "Recipe App",
+    image: recipe,
+    category: "Web",
+    description: `Developed a feature-rich Recipe App that allows users to discover, save, and share their favorite recipes. The app provides a seamless experience for food enthusiasts to explore a wide variety of dishes and cooking techniques.
+Key Features:
+- Extensive recipe database with search and filter options
+- User accounts for saving and sharing recipes
+- Step-by-step cooking instructions with images
+- Ingredient lists with nutritional information
+- Social sharing capabilities
+- Responsive design for mobile and desktop use
+
+Built with a focus on user experience and community engagement, this app is perfect for anyone looking to enhance their culinary skills and connect with fellow food lovers.`,
+    demoLink: "https://receipe-task-management.vercel.app",
+    stack: [
+      {
+        name: "ReactJs",
+        icon: <DiReact />,
+        iconColor: "skyblue",
+      },
+      {
+        name: "TailwindCSS",
+        icon: <SiAdobexd />,
+        iconColor: "skyblue",
+      },
+      {
+        name: "ShadcnUI",
+        icon: <SiAdobexd />,
+        iconColor: "skyblue",
+      },
+    ],
+  },
 ];
 
 export const clients = [
