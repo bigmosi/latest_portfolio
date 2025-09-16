@@ -6,6 +6,7 @@ import client5 from "./assets/client-5.jpeg";
 import ecommerce1 from "./assets/ecommerce1.jpg";
 import rental from "./assets/rental.png";
 import billing from "./assets/billing.png";
+import rocket from "./assets/rocket.png";
 import hrms from "./assets/hrms.png";
 import crm from "./assets/crm.png";
 import account from "./assets/account.png";
@@ -457,6 +458,39 @@ Built with a focus on user experience and community engagement, this app is perf
       {
         name: "ReactJs",
         icon: <DiReact />,
+        iconColor: "skyblue",
+      },
+      {
+        name: "TailwindCSS",
+        icon: <SiAdobexd />,
+        iconColor: "skyblue",
+      },
+      {
+        name: "ShadcnUI",
+        icon: <SiAdobexd />,
+        iconColor: "skyblue",
+      },
+    ],
+  },
+  {
+    id: 9,
+    title: "Rocket Launch",
+    image: rocket,
+    category: "Web",
+    description: `Developed a visually stunning Rocket Launch website that provides users with real-time information about upcoming rocket launches, mission details, and launch history. The website offers an engaging experience for space enthusiasts and professionals alike.
+Key Features:
+- Real-time launch schedule with countdown timers
+- Detailed mission profiles with objectives and payload information
+- Interactive launch history with past missions and outcomes
+- News and updates related to space exploration
+- Responsive design for optimal viewing on all devices
+
+Built with a focus on user engagement and accessibility, this website serves as a comprehensive resource for anyone interested in the exciting world of rocket launches and space exploration.`,
+    demoLink: "https://amos-space-traver-hub.netlify.app/",
+    stack: [
+      {
+        name: "NextJs",
+        icon: <SiAdobexd />,
         iconColor: "skyblue",
       },
       {
