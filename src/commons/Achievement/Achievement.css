@@ -1,55 +1,54 @@
+
 .achievement-container{
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    gap: 20px;
-    margin: 20px 0;
-
+    gap: 16px;
+    margin: 40px 0 0;
 }
 .achievement-container .card{
     width: 100%;
-    padding: 20%;
+    padding: 18px 12px;
     background: var(--bg-accent);
-    border-radius: 20px;
+    border: 1px solid var(--border-primary);
+    border-radius: 14px;
     transition: var(--transition);
 }
 .achievement-container .card:hover{
     background: var(--bg-secondary);
-    transform: scale(0.97);
+}
+.achievement-container .flex-center{
+    gap: 2px;
 }
 .achievement-container .title{
-    font-size: 50px;
+    font-size: 38px;
     font-weight: 700;
+    line-height: 1.1;
     margin: 0;
+    color: var(--primary);
 }
 .achievement-container .name{
     text-align: center;
-    font-style: 20px;
+    font-size: 13px;
+    line-height: 18px;
+    margin: 8px 0 0;
 }
 
 /* Responsive code */
-@media (max-width: 1150px){
-    .achievement-container .title{
-        font-style: 30px;
-    }
-    .achievement-container .name{
-        font-style: 12px;
-    }
-}
 @media (max-width: 500px){
     .achievement-container{
         gap: 10px;
     }
     .achievement-container .card{
-        padding: 10px;
+        padding: 12px 8px;
     }
     .achievement-container .title{
-        font-style: 20px;
+        font-size: 28px;
+    }
+    .achievement-container .name{
+        font-size: 11px;
+        line-height: 15px;
     }
 }
-
-
-
-
 
 .odometer.odometer-auto-theme, .odometer.odometer-theme-default {
     display: inline-block;

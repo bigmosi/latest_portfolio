@@ -1,13 +1,20 @@
 import React from 'react'
 import './Logo.css'
-import { FaLaptopCode } from 'react-icons/fa6'
+import { animateScroll } from 'react-scroll'
 
 const Logo = () => {
   return (
-    <div className='logo '>
-        <FaLaptopCode className='icon' />
-        <h1>Developer</h1>
-    </div>
+    <a
+    href='#hero'
+    className='logo'
+    onClick={(e) => {
+      e.preventDefault();
+      animateScroll.scrollToTop();
+    }}
+    >
+        <span className='flex-center mark'>KA</span>
+        <span className='name'>Kinyera Amos</span>
+    </a>
   )
 }
 

@@ -41,6 +41,31 @@
     text-align: left;
 }
 
+#hero .availability{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--border-primary);
+    background: var(--bg-accent);
+    color: var(--muted-foreground);
+    margin-bottom: 10px;
+}
+#hero .availability .dot{
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    background: var(--primary);
+    box-shadow: 0 0 0 4px rgba(82, 194, 52, 0.2);
+}
+#hero .intro{
+    font-size: 17px;
+    line-height: 28px;
+    max-width: 600px;
+}
+
 #hero .wrapper .buttons-wrapper{
     justify-content: flex-start;
     margin-top: 40px;
@@ -71,5 +96,17 @@
     }
     #hero .info-container .buttons-wrapper{
       justify-content: center;
+    }
+    #hero .intro{
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #hero .hero-image{
+      margin: 0 auto;
+      width: 100%;
+      max-width: 360px;
+    }
+    #hero .hero-image img{
+      width: 100%;
     }
 }

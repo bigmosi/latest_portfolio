@@ -2,38 +2,39 @@ import React from 'react'
 import './Footer.css'
 import Logo from '../../commons/Logo'
 import SocialHandles from '../../commons/SocialHandles'
-import { footer } from '../../sources'
+import { tabs, contactOptions } from '../../sources'
 import { Link } from 'react-scroll'
-
 
 const Footer = () => {
   return (
     <footer id='footer'>
       <div className="wrapper">
-        <div className="column" data-aos='fade-down'>
+        <div className="column">
           <Logo />
+          <p className="muted tagline">
+            Full Stack Developer building React, Node.js and mobile products used across Africa.
+          </p>
           <SocialHandles />
         </div>
-        {
-          footer.map((list,index) => (
-            <div className="column" data-aos='fade-down' key={index}>
-              <h3 className="muted title">{list.title}</h3>
-              {
-                list.routes.map((route,i) => (
-                  <Link to={route.id || ''} smooth={true} className='route' key={index}>
-                  {
-                    route.name
-                  }
-                  </Link>
-                ))
-              }
-            </div>
-          ))
-        }
+        <div className="column">
+          <h3 className="muted title">Navigate</h3>
+          {tabs.map((tab) => (
+            <Link to={tab.id} smooth={true} offset={-70} className='route' key={tab.id}>
+              {tab.name}
+            </Link>
+          ))}
+        </div>
+        <div className="column">
+          <h3 className="muted title">Contact</h3>
+          {contactOptions.map((option) => (
+            option.href
+              ? <a href={option.href} className='route' key={option.title}>{option.value}</a>
+              : <span className='route static' key={option.title}>{option.value}</span>
+          ))}
+        </div>
       </div>
-      <div className="flex-center copyright" data-aos='fade-zoom-in'>
-        <h4>Copyright &copy; All rights reserved | 2024</h4>
-        <p className="muted">Built with love by Amos a Developer</p>
+      <div className="flex-center copyright">
+        <p className="muted">&copy; {new Date().getFullYear()} Kinyera Amos. All rights reserved.</p>
       </div>
     </footer>
   )

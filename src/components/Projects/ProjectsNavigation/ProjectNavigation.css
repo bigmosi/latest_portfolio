@@ -2,12 +2,13 @@
 position: relative;
 width: 100%;
 max-width: max-content;
+overflow-x: auto;
+scrollbar-width: none;
 height: 50px;
 display: flex;
 align-items: center;
 justify-content: center;
-margin: auto;
-margin-bottom: 40px;
+margin: 30px auto 10px;
 user-select: none;
 }
 .project-navigation button{
@@ -21,6 +22,8 @@ user-select: none;
     z-index: 1px;
     cursor: pointer;
     background: transparent;
+    height: 100%;
+    white-space: nowrap;
 }
 .project-navigation .indicator{
     position: absolute;

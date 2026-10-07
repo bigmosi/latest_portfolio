@@ -1,58 +1,43 @@
 import React from 'react'
 import './Hero.css'
-import last from '../../assets/pic1212.png'
+import portrait from '../../assets/pic1212.png'
 import { Link } from 'react-scroll'
 import Achievement from '../../commons/Achievement'
 
 const Hero = () => {
-  console.log('Hero component rendered');
-  console.log('Image import last:', last);
-
-  const handleImageLoad = () => {
-    console.log('Image loaded successfully');
-  };
-
-  const handleImageError = () => {
-    console.log('Image failed to load');
-  };
-
   return (
     <section id='hero'>
       <div className="wrapper info-container">
         <div className="column">
+          <span className="availability" data-aos='fade-right'>
+            <span className="dot" /> Open to remote roles & contracts
+          </span>
           <h3 className='sub-title' data-aos='fade-right' data-aos-duration='1000'>
             Hi, I'm <span className="primary">Kinyera Amos</span>
           </h3>
           <h1 className="heading-1" data-aos='fade-up' data-aos-duration='1000'>
-            A <span className="gradient-text">Fullstack</span>Web Developer
+            <span className="gradient-text">Full Stack</span> Developer
           </h1>
-          <p className="muted" data-aos='fade-up' data-aos-duration='2000'>
-            who combines technical expertise with a creative flair to build captivating online experiences. With a mastery of coding languages and a passion for innovation, I transform ideas into beautifully functional websites.
+          <p className="muted intro" data-aos='fade-up' data-aos-duration='1000'>
+            I ship web and mobile apps that people actually use — React, TypeScript and TanStack on the
+            frontend, Node.js and PostgreSQL on the backend, React Native and Flutter for mobile. Six years
+            of NGO platforms, ERPs, marketplaces and civic tech, from first commit to production.
           </p>
           <div className="flex-center buttons-wrapper">
-            <Link
-            to='services'
-            smooth={true}
-            className='btn primary'
-            data-aos='fade-left' data-aos-delay='2000' data-aos-offset='50'
-            >
-              Learn More
+            <Link to='projects' smooth={true} offset={-70} className='btn primary'>
+              View My Work
             </Link>
-            <Link
-            to='contact'
-            smooth={true}
-            className='btn'
-            data-aos='fade-left' data-aos-delay='1500' data-aos-offset='50'
-            >
-              Get Started
+            <Link to='contact' smooth={true} offset={-70} className='btn'>
+              Get in Touch
             </Link>
           </div>
+          <Achievement />
         </div>
         <div className="column hero-image" data-aos='fade-left' data-aos-delay='200'>
-            <img src={last} alt="me" onLoad={handleImageLoad} onError={handleImageError} />
+          <img src={portrait} alt="Kinyera Amos" />
         </div>
       </div>
-     </section>
+    </section>
   )
 }
 

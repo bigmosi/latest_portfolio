@@ -5,12 +5,15 @@ import { socialHandles } from '../../sources'
 const SocialHandles = () => {
   return (
     <div className="handles-container">
-        {socialHandles.map((handle, index) => (
-            <a 
+        {socialHandles.map((handle) => (
+            <a
             href={handle.link}
-            key={index}
+            key={handle.name}
             target='_blank'
-            className='flex-center icon-wrap'
+            rel='noopener noreferrer'
+            aria-label={handle.name}
+            title={handle.name}
+            className='flex-center icon-wrapper'
             >
                 {handle.icon}
             </a>

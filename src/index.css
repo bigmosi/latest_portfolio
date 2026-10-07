@@ -23,13 +23,17 @@
 }
 
 *{
-  margin: o;
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
   border: 0;
   outline: 0;
 
+}
+
+html{
+  scroll-padding-top: 80px;
 }
 
 html,body {
@@ -52,7 +56,7 @@ body{
 
 p{
   font-size: 15px;
-  line-height: 20px;
+  line-height: 24px;
 
 }
 
@@ -61,7 +65,7 @@ a{
   text-decoration: none;
 }
 
-h1,h2,h3,h4.h5,h6{
+h1,h2,h3,h4,h5,h6{
   font-weight: 500;
 }
 
@@ -81,7 +85,9 @@ img{
 }
 
 .sub-title{
-  font-size: 20px;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 400;
   text-align: center;
 
 }
@@ -156,6 +162,56 @@ img{
 .btn.primary{
   background: var(--gradient-1);
   border: none;
+}
+
+section{
+  scroll-margin-top: 70px;
+}
+
+.sub-title + .sub-title{
+  margin-top: 16px;
+}
+
+.chips{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip{
+  font-size: 12px;
+  line-height: 18px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-primary);
+  color: var(--foreground);
+  white-space: nowrap;
+}
+
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  transition: var(--transition);
+}
+
+.btn:hover{
+  border-color: var(--primary-accent);
+}
+
+.btn.primary:hover{
+  filter: brightness(1.1);
+}
+
+.btn:focus-visible,
+a:focus-visible,
+button:focus-visible{
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
 }
 
 /* Responsive Code */

@@ -9,32 +9,30 @@ const Services = () => {
       <div className="wrapper">
         <div className="section-header">
           <h1 className="heading-1" data-aos='fade-up' data-aos-duration='1000'>
-            <span className="gradient-text">Services</span>
+            <span className="gradient-text">What I Can Do For You</span>
           </h1>
-          <h4 className="sub-title muted" data-aos='fade-down' data-aos-duration='1000'>
-          I create captivating user interfaces that not only showcase your brand's essence but also provides an intuitive and delightful journey for your visitors. 
-          I bring your story to life with words and visuals that speak directly to the hearts of your audience. By understanding your unique voice and objectives.
-          When it comes to full-stack development, I possess the skills to turn your dreams into a fully functional reality. From crafting responsive websites to building powerful web applications,
-          </h4>
+          <p className="sub-title muted" data-aos='fade-up' data-aos-duration='1000'>
+            Whether you need a full product built, an API behind your app, a dashboard your team will actually
+            enjoy using, or a mobile app that keeps working offline — I can own it from first commit to production.
+          </p>
         </div>
         <div className="services-container">
           {
-            services.map((service, index) => (
-              <div className="service" data-aos='fade-left' data-aos-duration='2000' key={index}>
+            services.map((service) => (
+              <div className="service" data-aos='fade-up' data-aos-duration='800' key={service.name}>
                 <div className="flex-center icon-wrapper">
                   {service.icon}
                 </div>
                 <div className="details">
-                  <h3 className="name gradient-text"> {service.name} </h3>
-                  <p className="muted"> {service.description} </p>
-                </div>
-                <div className="flex buttons-wrapper">
-                  <button className="btn">Read More</button>
-                  <Link to='contact' smooth={true} className='btn ' >Get Started</Link>
+                  <h3 className="name gradient-text">{service.name}</h3>
+                  <p className="muted">{service.description}</p>
                 </div>
               </div>
             ))
           }
+        </div>
+        <div className="flex-center cta" data-aos='fade-up'>
+          <Link to='contact' smooth={true} offset={-70} className='btn primary'>Discuss Your Project</Link>
         </div>
       </div>
     </section>

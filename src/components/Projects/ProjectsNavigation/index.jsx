@@ -18,7 +18,7 @@ const ProjectNavigation = ({
     }
 
     useEffect(() => {
-        Aos.refreshHard;
+        Aos.refreshHard();
         const prevEl = itemsEls.current.filter((_,index) => index < activeIndex);
         setOffset(
             sumArray(prevEl.map((item) => item.offsetWidth))
@@ -34,7 +34,7 @@ const ProjectNavigation = ({
                 onClick={() => {
                     setActiveIndex(index);
                     onChange(tab);
-                    Aos.refreshHard;
+                    Aos.refreshHard();
                 }}
                 key={index}
                 >

@@ -1,0 +1,130 @@
+#experience .timeline{
+    list-style: none;
+    margin: 50px auto 0;
+    padding: 0 0 0 30px;
+    max-width: 900px;
+    border-left: 2px solid var(--border-primary);
+}
+#experience .job{
+    position: relative;
+    margin-bottom: 30px;
+}
+#experience .marker{
+    position: absolute;
+    left: -39px;
+    top: 28px;
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    background: var(--gradient-1);
+    box-shadow: 0 0 0 5px var(--bg-primary);
+}
+#experience .job-card{
+    background: var(--bg-accent);
+    border: 1px solid var(--border-primary);
+    border-radius: 12px;
+    padding: 24px 28px;
+    transition: var(--transition);
+}
+#experience .job-card:hover{
+    border-color: var(--primary-accent);
+}
+#experience .job-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 14px;
+}
+#experience .role{
+    font-size: 19px;
+    font-weight: 600;
+    margin: 0;
+}
+#experience .company{
+    font-size: 15px;
+    font-weight: 500;
+    margin: 4px 0 0;
+}
+#experience .meta{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    text-align: right;
+    white-space: nowrap;
+}
+#experience .period{
+    font-size: 14px;
+    font-weight: 500;
+}
+#experience .location{
+    font-size: 13px;
+}
+#experience .points{
+    margin: 0;
+    padding-left: 18px;
+}
+#experience .points li{
+    font-size: 15px;
+    line-height: 24px;
+    margin-bottom: 8px;
+}
+#experience .points li::marker{
+    color: var(--primary);
+}
+#experience .chips{
+    margin-top: 14px;
+}
+#experience .education{
+    max-width: 900px;
+    margin: 50px auto 0;
+}
+#experience .education-title{
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+#experience .education-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+#experience .education-item{
+    background: var(--bg-accent);
+    border: 1px solid var(--border-primary);
+    border-radius: 12px;
+    padding: 20px 24px;
+}
+#experience .education-item h4{
+    margin: 0 0 6px;
+    font-size: 16px;
+}
+#experience .education-item p{
+    margin: 0;
+}
+
+/* Responsive Code */
+@media (max-width: 700px){
+    #experience .timeline{
+        padding-left: 20px;
+    }
+    #experience .marker{
+        left: -29px;
+    }
+    #experience .job-card{
+        padding: 20px;
+    }
+    #experience .job-header{
+        flex-direction: column;
+        gap: 8px;
+    }
+    #experience .meta{
+        align-items: flex-start;
+        text-align: left;
+        white-space: normal;
+    }
+    #experience .education-grid{
+        grid-template-columns: 100%;
+    }
+}

@@ -1,46 +1,19 @@
 .skill-card{
-    padding: 30px 40px;
-    border: 1px solid transparent;
+    padding: 24px;
+    border: 1px solid var(--border-primary);
     transition: var(--transition);
-    border-radius: 20px;
+    border-radius: 16px;
     background: var(--bg-accent);
 }
 .skill-card:hover{
-    background: transparent;
-    border-color: var(--border-primary);
+    border-color: var(--primary-accent);
     cursor: default;
 }
 .skill-card .title{
-    text-align: center;
-    margin-bottom: 2rem;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 16px;
 }
-.skill-card .skill-content{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 2rem;
-}
-.skill-card .skill-details{
-    display: flex;
-    gap: 1rem;
-}
-.skill-card .skill-icon{
-    margin-top: 6px;
-    color: var(--primary)
-}
-.skill-card .skill-details .skill-name{
-    font-size: 15px;
-    font-weight: 500;
-}
-.skill-card .skill-details .skill-level{
-    font-size: 14px;
-}
-
-/* Responsive Code */
-@media (max-width:350px){
-    .skill-card .skill-details .skill-name{
-        font-size: 12px;
-    }
-    .skill-card .skill-details .skill-level{
-        font-size: 10px;
-    }
+.skill-card .chip{
+    font-size: 13px;
 }

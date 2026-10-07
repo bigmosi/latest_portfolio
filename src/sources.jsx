@@ -1,537 +1,314 @@
-import client1 from "./assets/client-1.jpeg";
-import client2 from "./assets/client-2.jpeg";
-import client3 from "./assets/client-3.jpeg";
-import client4 from "./assets/client-4.jpeg";
-import client5 from "./assets/client-5.jpeg";
 import ecommerce1 from "./assets/ecommerce1.jpg";
+import nyumbanapp from "./assets/nyumbanapp.jpg";
+import claritydesk from "./assets/claritydesk.jpg";
+import nyumbanappForum from "./assets/nyumbanapp-forum.jpg";
 import rental from "./assets/rental.png";
 import billing from "./assets/billing.png";
-import rocket from "./assets/rocket.png";
-import hrms from "./assets/hrms.png";
-import crm from "./assets/crm.png";
-import account from "./assets/account.png";
-import payment from "./assets/payment.png";
-import recipe from "./assets/recipe.png";
-import { IoMdAnalytics } from "react-icons/io";
+import rocket from "./assets/rocket.jpg";
+import payment from "./assets/payment.jpg";
+import recipe from "./assets/recipe.jpg";
 import { IoCallOutline, IoLocationOutline } from "react-icons/io5";
-import { GrUserExpert } from "react-icons/gr";
-import { MdOutlineSupportAgent, MdOutlineAlternateEmail } from "react-icons/md";
+import { MdOutlineAlternateEmail, MdOutlineDashboard } from "react-icons/md";
+import { FaServer, FaLaptopCode } from "react-icons/fa";
 import { RiExchange2Fill } from "react-icons/ri";
+import { SiTypescript } from "react-icons/si";
 import {
   FaXTwitter,
-  FaLaptopCode,
-  FaNetworkWired,
   FaLinkedin,
   FaGithub,
+  FaLayerGroup,
+  FaMobileScreen,
 } from "react-icons/fa6";
-import { DiReact } from "react-icons/di";
-import { FaNodeJs } from "react-icons/fa";
-import { SiExpress, SiMongodb } from "react-icons/si";
-import { CgFigma } from "react-icons/cg";
-import { TbBrandReactNative } from "react-icons/tb";
-import { SiAdobexd } from "react-icons/si";
 
 export const tabs = [
-  { name: "About Me", id: "about" },
-  { name: "Skill", id: "skill" },
+  { name: "About", id: "about" },
+  { name: "Experience", id: "experience" },
+  { name: "Skills", id: "skill" },
   { name: "Services", id: "services" },
   { name: "Projects", id: "projects" },
-  { name: "Testimonials", id: "testimonials" },
+  { name: "Contact", id: "contact" },
+];
+
+export const stats = [
+  { value: 6, suffix: "+", label: "Years of experience" },
+  { value: 7, suffix: "", label: "Countries with live deployments" },
+  { value: 3, suffix: "+", label: "Apps live on App Store & Play Store" },
 ];
 
 export const whyChooseMe = [
   {
-    title: "Extensive Field Deployment Experience",
-    icon: <GrUserExpert />,
-    link: "",
+    title: "End-to-end delivery: React frontends, Node.js APIs, PostgreSQL",
+    icon: <FaLayerGroup />,
   },
   {
-    title: "Data-Driven Decision Making",
-    icon: <IoMdAnalytics />,
-    link: "",
+    title: "Strict TypeScript with Zod types shared across API, routes & forms",
+    icon: <SiTypescript />,
   },
   {
-    title: "Client-Centered Engineering Solutions",
-    icon: <MdOutlineSupportAgent />,
-    link: "",
+    title: "Production mobile apps on the App Store & Play Store",
+    icon: <FaMobileScreen />,
   },
   {
-    title: "Innovative Offline-First Architectures",
+    title: "Offline-first apps for low-connectivity regions",
     icon: <RiExchange2Fill />,
-    link: "",
   },
 ];
+
+export const experience = [
+  {
+    role: "Senior Front-End Developer",
+    company: "Raising The Village",
+    period: "Oct 2025 – Present",
+    location: "Mbarara, Uganda · On-site",
+    points: [
+      "Build the implementation management system that field officers, coaches and program managers use to track household-level development work across Uganda, Rwanda, DRC and Tanzania.",
+      "Shipped the Agriculture, VSLA & Savings, Training, Leadership and Coaching modules — forms, tables, reporting views and compliance/adoption dashboards filterable by region, district, cluster, village, cohort and cycle.",
+      "Built WorkMate, an embedded AI chat assistant that lets program staff query program data conversationally.",
+    ],
+    stack: ["React", "TypeScript", "RTK Query", "TanStack Router", "TanStack Query", "TanStack Form", "Ant Design", "ApexCharts"],
+  },
+  {
+    role: "Full Stack Developer",
+    company: "NyumbanApp",
+    period: "Jan 2025 – Present",
+    location: "Kampala, Uganda",
+    points: [
+      "Building nyumbanapp.com — a rental platform connecting landlords and tenants across Uganda — on web and React Native mobile.",
+      "Landlord and tenant flows for listings, applications, tour scheduling, in-app messaging and payment history, with role-based access for landlords, tenants, agents and admins.",
+      "Integrated Dusupay for mobile money (MTN, Airtel) and bank transfer rent payments with real-time status for both sides.",
+      "Built the NyumbanApp community forum (forum.nyumbanapp.com) where landlords and tenants discuss rentals, share suggestions and report bugs.",
+    ],
+    stack: ["React Native", "Next.js", "TypeScript", "TanStack Query", "Tailwind CSS", "Shadcn/UI", "Node.js", "PostgreSQL"],
+  },
+  {
+    role: "Full Stack Developer (Contract)",
+    company: "Dango Tech Concept Limited",
+    period: "Jan 2025 – Jan 2026",
+    location: "Kampala, Uganda",
+    points: [
+      "Built ClarityDesk in React Native — an offline-first civic app for the South Sudan 2026 elections, live on the App Store and Play Store.",
+      "Built Dangopay in Flutter — a rent and water bill payment app processing real mobile money transactions, live on Google Play.",
+      "Delivered Nyumba Yo (property management), Wellowe (fashion e-commerce) and a Next.js platform with Docker, NGINX and CI/CD set up from zero; streamed OpenAI responses from FastAPI over WebSocket.",
+    ],
+    stack: ["React Native", "Flutter", "Next.js", "TanStack", "Zod", "FastAPI", "Docker"],
+  },
+  {
+    role: "Senior Front-End Developer",
+    company: "Tracecorp Solutions",
+    period: "May 2023 – Sep 2025",
+    location: "Kampala, Uganda",
+    points: [
+      "Led the frontend across a full utility ERP — Accounting, Water Billing, CRM, HRMS and Asset Management — running at water utilities in Nigeria, Ethiopia and South Sudan, including Lagos Water Corporation.",
+      "Built the shared component library and design system used across all eight modules.",
+      "Led a zero-downtime JavaScript → TypeScript migration on the live codebase, ran code reviews and set frontend standards for the team.",
+    ],
+    stack: ["React", "TypeScript (strict)", "TanStack Query", "Zod", "Design System"],
+  },
+  {
+    role: "Full Stack Developer",
+    company: "Yookatale",
+    period: "Feb 2020 – Nov 2022",
+    location: "Kampala, Uganda",
+    points: [
+      "Owned the web platform for Uganda's online grocery and food-delivery marketplace end to end.",
+      "Built cart, search, checkout (mobile money, cards, cash on delivery, YooCard), order tracking, meal-plan subscriptions, loyalty points and a vendor portal.",
+      "Cut load time by 20% through Next.js optimisation and code splitting; shipped Flutter apps for Android and iOS alongside the web.",
+    ],
+    stack: ["Next.js", "TypeScript", "Node.js", "MongoDB", "Flutter"],
+  },
+];
+
+export const education = [
+  {
+    title: "BSc Information Technology",
+    school: "Kyambogo University, Uganda",
+    period: "2015 – 2018",
+  },
+  {
+    title: "Full-Stack Web Development Bootcamp",
+    school: "Microverse (Remote)",
+    period: "2022",
+  },
+];
+
 export const services = [
   {
-    name: "Full Stack Web Development",
+    name: "Full Stack Web Apps",
     icon: <FaLaptopCode />,
-    description: `I build responsive, scalable, and efficient web applications using modern stacks including 
-    React, Next.js, Node.js, Ruby on Rails, and MongoDB. From building APIs to crafting pixel-perfect UIs, 
-    I deliver full-fledged solutions tailored to real business needs.`,
+    description: `Product-ready web apps from first commit to production — React and the TanStack ecosystem on the
+    frontend, Node.js and PostgreSQL behind it, Dockerised with CI/CD.`,
   },
   {
-    name: "Enterprise Systems Implementation",
-    icon: <FaNetworkWired />,
-    description: `Experienced in deploying ERP systems for utility and government sectors, with a focus on 
-    Accounting, CRM, Billing, and Asset Management. I ensure seamless setup, offline capability, and long-term 
-    support for operations in remote or low-connectivity environments.`,
+    name: "APIs & Backend Services",
+    icon: <FaServer />,
+    description: `REST and GraphQL APIs with Express or NestJS, auth (JWT, OAuth2, RBAC), webhooks, WebSockets and
+    well-designed PostgreSQL schemas with Prisma or TypeORM.`,
   },
   {
-    name: "Mobile App Development",
-    icon: <TbBrandReactNative />,
-    description: `I develop intuitive and offline-capable mobile apps using React Native. These apps empower 
-    field agents and end-users with real-time capabilities, from billing systems to HR self-service tools.`,
+    name: "Dashboards & Internal Tools",
+    icon: <MdOutlineDashboard />,
+    description: `Data-heavy admin panels with tables, filters, forms and charts — TanStack Query for caching,
+    invalidation and optimistic updates, built on a shared component library.`,
+  },
+  {
+    name: "Cross-Platform Mobile Apps",
+    icon: <FaMobileScreen />,
+    description: `React Native (Expo, EAS Build) and Flutter apps — including offline-first builds for areas with
+    unreliable internet — shipped to the App Store and Play Store.`,
   },
 ];
 
 export const skills = [
   {
-    title: "UI/UX",
-    data: [
-      {
-        skill: "Figma",
-        level: "Experienced",
-      },
-      {
-        skill: "Sketch",
-        level: "Intermediate",
-      },
-      {
-        skill: "XD",
-        level: "Intermediate",
-      },
-    ],
+    title: "Frontend",
+    data: ["React", "Next.js", "TypeScript (strict)", "JavaScript (ES6+)", "Vite", "Webpack"],
   },
   {
-    title: "Frontend Development",
-    data: [
-      {
-        skill: "HTML",
-        level: "Experienced",
-      },
-      {
-        skill: "CSS",
-        level: "Experienced",
-      },
-      {
-        skill: "JavaScript",
-        level: "Experienced",
-      },
-      {
-        skill: "Tailwind",
-        level: "Intermediate",
-      },
-      {
-        skill: "Bootstrap",
-        level: "Intermediate",
-      },
-      {
-        skill: "React",
-        level: "Experienced",
-      },
-      {
-        skill: "React Native",
-        level: "Experienced",
-      },
-    ],
+    title: "TanStack & State",
+    data: ["TanStack Router", "TanStack Query", "TanStack Form", "Zod", "Redux Toolkit / RTK Query", "Zustand"],
   },
   {
-    title: "Backend Development",
-    data: [
-      {
-        skill: "Node JS",
-        level: "Experienced",
-      },
-      {
-        skill: "MongoDB",
-        level: "Intermediate",
-      },
-      {
-        skill: "Ruby on Rails",
-        level: "Intermediate",
-      },
-      {
-        skill: ".Net",
-        level: "Intermediate",
-      },
-      {
-        skill: "MySQL",
-        level: "Experienced",
-      },
-      {
-        skill: "Postgresql",
-        level: "Experienced",
-      },
-    ],
+    title: "Styling & UI",
+    data: ["Tailwind CSS", "Shadcn/UI", "Radix UI", "Ant Design", "SCSS", "ApexCharts", "Recharts"],
+  },
+  {
+    title: "Backend",
+    data: ["Node.js", "Express", "NestJS", "REST", "GraphQL", "WebSocket", "Python / FastAPI", "OpenAI API"],
+  },
+  {
+    title: "Auth & APIs",
+    data: ["JWT", "OAuth2 / OIDC", "2FA", "RBAC", "Webhooks", "Rate limiting"],
+  },
+  {
+    title: "Databases",
+    data: ["PostgreSQL", "MySQL", "Prisma", "TypeORM", "MongoDB", "SQLite", "Redis"],
+  },
+  {
+    title: "Mobile",
+    data: ["React Native", "Expo", "EAS Build", "Flutter / Dart", "Offline-first"],
+  },
+  {
+    title: "DevOps & Quality",
+    data: ["Docker", "GitHub Actions", "AWS", "NGINX", "Vitest", "Jest", "Playwright", "Cypress", "React Testing Library", "Sentry"],
   },
 ];
 
 export const projects = [
   {
     id: 1,
-    title: "ECommerce Web Application",
-    image: ecommerce1,
-    category: "Web",
-    description: `Enhance your online shopping experience with our E-Commerce Application 
-      UI design project. Seamlessly blending aesthetics with functionality, our intuitive 
-      interface offers easy navigation, personalized recommendations, and secure 
-      transactions. Elevate your digital storefront and captivate customers with a visually 
-      stunning design tailored to your brand`,
-    demoLink: "http://localhost:5173/",
-    stack: [
-      {
-        name: "NextJs",
-        icon: <SiAdobexd />,
-        iconColor: "skyblue",
-      },
-      {
-        name: "NodeJs",
-        icon: <FaNodeJs />,
-        iconColor: "green",
-      },
-      {
-        name: "ExpressJs",
-        icon: <SiExpress />,
-      },
-      {
-        name: "MongoDB",
-        icon: <SiMongodb />,
-        iconColor: "limegreen",
-      },
+    title: "NyumbanApp — Rental Platform",
+    image: nyumbanapp,
+    category: "Products",
+    description: `A rental property platform connecting landlords and tenants across Uganda, on web and mobile.
+    Landlords list properties, manage units, review applications and track rent; tenants browse verified listings,
+    book tours, pay rent via mobile money and message landlords in-app.`,
+    links: [
+      { label: "Website", url: "https://nyumbanapp.com" },
+      { label: "Web App", url: "https://web.nyumbanapp.com/app" },
+      { label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.londoncore.nyumbanapp" },
     ],
+    stack: ["React Native", "Next.js", "TypeScript", "TanStack", "Tailwind", "PostgreSQL"],
+  },
+  {
+    id: 10,
+    title: "NyumbanApp Community Forum",
+    image: nyumbanappForum,
+    category: "Products",
+    description: `A community forum where NyumbanApp landlords and tenants ask questions, share suggestions and report
+    bugs. New, Best and Trending feeds, categories and tags, likes, view counts, sharing, search with a ⌘K shortcut,
+    language switching and light/dark themes.`,
+    links: [{ label: "Live", url: "https://forum.nyumbanapp.com/trending/" }],
+    stack: ["React", "React Router", "Tailwind CSS", "Vite"],
   },
   {
     id: 2,
-    title: "Rental Management System",
-    image: rental,
-    category: "Web",
-    description: `
-    Developed a comprehensive Rental Management System designed to streamline the operations of landlords, property managers, and tenants. The platform enables efficient property listing, tenant onboarding, rent invoicing, and automated payment tracking.
-
-    Key features include:
-    - Property and unit management with status tracking
-    - Tenant registration and lease agreement management
-    - Automated rent billing and overdue notifications
-    - Payment history and receipt generation
-    - Admin dashboard with real-time analytics and reporting
-    - Role-based access for landlords, agents, and tenants
-
-    The system was built with scalability in mind and optimized for mobile responsiveness, ensuring a seamless experience across devices. It also supports offline-first functionality for field agents managing properties in low-connectivity areas.
-  `,
-    demoLink: "https://dangopay.dangotechconcepts.com/",
-    stack: [
-      {
-        name: "ReactJs",
-        icon: <DiReact />, 
-        iconColor: "skyblue",
-      },
-      {
-        name: "NodeJs",
-        icon: <FaNodeJs />, 
-        iconColor: "green",
-      },
-      {
-        name: "ExpressJs",
-        icon: <SiExpress />,
-      },
-      {
-        name: "MongoDB",
-        icon: <SiMongodb />, 
-        iconColor: "limegreen",
-      },
-    ],
+    title: "RTV Implementation Management System",
+    category: "Enterprise",
+    description: `Internal platform used by Raising The Village field officers and program managers across four
+    countries. Agriculture, savings groups, training, leadership and household coaching modules, with compliance
+    and adoption dashboards and WorkMate — an embedded AI assistant for querying program data.`,
+    note: "Internal system · Mobile app on App Store & Play Store",
+    stack: ["React", "TypeScript", "RTK Query", "TanStack Router", "Ant Design", "ApexCharts"],
   },
   {
     id: 3,
-    title: "Water Billing System",
+    title: "Utility ERP Suite",
     image: billing,
-    category: "Web",
-    description: `
-    Engineered a robust Water Billing System tailored for utility companies and municipal governments to automate the metering, billing, and payment tracking processes for water usage.
-
-    Key features include:
-    - Customer registration and meter assignment
-    - Monthly meter readings and automatic bill generation
-    - Tariff management with configurable rate slabs
-    - SMS and email notifications for billing alerts
-    - Secure payment gateway integration
-    - Real-time usage tracking and billing analytics dashboard
-    - Role-based access for administrators, field agents, and customers
-
-    Designed to work efficiently in both online and offline modes, especially for field agents collecting data in remote areas. The system significantly reduced revenue leakage and improved operational transparency.
-  `,
-    stack: [
-      {
-        name: "ReactJs",
-        icon: <DiReact />,
-        iconColor: "skyblue",
-      },
-      {
-        name: "NodeJs",
-        icon: <FaNodeJs />,
-        iconColor: "green",
-      },
-      {
-        name: "ExpressJs",
-        icon: <SiExpress />,
-      },
-      {
-        name: "MongoDB",
-        icon: <SiMongodb />,
-        iconColor: "limegreen",
-      },
-      {
-        name: "MongoDBT",
-        icon: <SiMongodb />,
-      },
-      {
-        name: "MongoDBT",
-        icon: <SiMongodb />,
-      },
-      {
-        name: "MongoDBT",
-        icon: <SiMongodb />,
-      },
-    ],
+    category: "Enterprise",
+    description: `Frontend lead on an ERP for water utilities in Nigeria, Ethiopia and South Sudan — Water Billing,
+    Accounting, CRM, HRMS and Asset Management — built on a shared component library across eight modules, with a
+    zero-downtime JavaScript to TypeScript migration.`,
+    note: "Client deployments · Tracecorp Solutions",
+    links: [{ label: "Tracecorp", url: "https://tracecorpsolutions.com" }],
+    stack: ["React", "TypeScript", "TanStack Query", "Zod"],
   },
   {
     id: 4,
-    title: "Human Resource Management application(HRMS)",
-    image: hrms,
-    category: "Apps",
-    description: `
-    Built a comprehensive Human Resource Management System (HRMS) to streamline employee administration, improve HR workflows, and centralize personnel data for organizations.
-
-    Key Features:
-    - Employee onboarding and digital profile management
-    - Attendance tracking and leave request approvals
-    - Payroll processing with salary breakdowns and tax deductions
-    - Performance appraisals and KPI tracking
-    - Role-based user management (HR, Employee, Admin)
-    - Document management (contracts, ID uploads, certificates)
-    - Secure login with activity logs and audit trails
-
-    The system supports integration with biometric devices for attendance and is optimized for both desktop and mobile use. It offers HR teams a scalable and intuitive platform to manage the full employee lifecycle, from recruitment to retirement.
-  `,
-    demoLink: "http://3.216.182.63:8067/",
-    stack: [
-      {
-        name: "React Native",
-        icon: <TbBrandReactNative />,
-        iconColor: "skyblue",
-      },
-      {
-        name: "NodeJs",
-        icon: <FaNodeJs />,
-        iconColor: "green",
-      },
-      {
-        name: "ExpressJs",
-        icon: <SiExpress />,
-      },
-      {
-        name: "MongoDB",
-        icon: <SiMongodb />,
-        iconColor: "limegreen",
-      },
+    title: "ClarityDesk",
+    image: claritydesk,
+    category: "Mobile",
+    description: `A civic fact-checking platform for the South Sudan 2026 elections — mobile app plus claritydesk.org.
+    Fact-checks, election updates and an official document repository, built offline-first for areas with no reliable
+    internet and published on both the App Store and Play Store.`,
+    links: [
+      { label: "Website", url: "https://claritydesk.org" },
+      { label: "App Store", url: "https://apps.apple.com/app/the-claritydesk/id6760489094" },
+      { label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.claritydesk" },
     ],
+    stack: ["React Native", "TypeScript", "Offline-first"],
   },
   {
     id: 5,
-    title: "Accounting Application",
-    image: account,
-    category: "app",
-    description: `Developed a feature-rich Accounting Application tailored for small to medium-sized enterprises (SMEs) and government agencies to streamline financial management and ensure compliance.
-Key Features:
-- Multi-ledger support including General, Sales, and Purchase Ledgers
-- Invoice generation and payment tracking
-- Budget planning and expense categorization
-- Bank reconciliation and audit trail logs
-- Real-time financial reporting (P&L, Balance Sheet, Cash Flow)
-- User role management with access controls
-- Export functionality for reports in PDF and Excel formats
-
-The app is optimized for both desktop and mobile usage, ensuring accessibility for finance teams and decision-makers on the go. Built with scalability in mind, it supports offline-first operations and secure cloud sync.`,
-    demoLink: "http://3.216.182.63:8067/",
-    stack: [
-      {
-        name: "Figma",
-        icon: <CgFigma />,
-        iconColor: "orangered",
-      },
+    title: "Dangopay — Utility Payments",
+    image: payment,
+    category: "Mobile",
+    description: `A payment app for rent and water bills in Uganda, processing real mobile money transactions.
+    Flutter mobile app on Google Play plus a web payment portal.`,
+    links: [
+      { label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.dangopay" },
+      { label: "Web", url: "https://dangopay.dangotechconcepts.com/#/make-utility-payment" },
     ],
+    stack: ["Flutter", "React", "Tailwind", "Shadcn/UI"],
   },
   {
     id: 6,
-    title: "Customer Relationship Management (CRM) Application",
-    image: crm,
-    category: "Apps",
-    description: `
-Designed and developed a comprehensive Customer Relationship Management (CRM) Application to help organizations streamline client interactions, boost sales performance, and enhance customer retention.
-
-Key Features:
-- Centralized customer database with detailed profiles
-- Sales pipeline and opportunity tracking
-- Lead management with status updates and notes
-- Automated follow-up reminders and communication logs
-- Task and activity scheduling for teams
-- Customizable reporting dashboard for sales analytics
-- Role-based access for managers, agents, and support staff
-- Integration-ready APIs for third-party tools (email, SMS, etc.)
-
-Built with an intuitive UI and optimized for mobile responsiveness, this CRM empowers sales and support teams to manage relationships efficiently—anytime, anywhere. Offline capability ensures seamless usage even in low-connectivity regions.`,
-    demoLink: "http://3.216.182.63:8067/",
-    stack: [
-      {
-        name: "React Native",
-        icon: <TbBrandReactNative />,
-        iconColor: "skyblue",
-      },
-      {
-        name: "NodeJs",
-        icon: <FaNodeJs />,
-        iconColor: "green",
-      },
-      {
-        name: "ExpressJs",
-        icon: <SiExpress />,
-      },
-      {
-        name: "MongoDB",
-        icon: <SiMongodb />,
-        iconColor: "limegreen",
-      },
-    ],
+    title: "Nyumba Yo — Property Management",
+    image: rental,
+    category: "Products",
+    description: `Property management system covering landlord listings, tenant management, rent invoicing and
+    payment tracking, with role-based access for landlords, agents and tenants.`,
+    links: [{ label: "Live", url: "https://dangopay.dangotechconcepts.com/" }],
+    stack: ["React", "Node.js", "Express", "PostgreSQL"],
   },
   {
     id: 7,
-    title: "Utility Payments",
-    image: payment,
-    category: "Web",
-    description: `Developed a comprehensive Utility Payments platform to streamline bill payment for users. The platform allows users to pay their utility bills (water) seamlessly and securely.
-
-Key Features:
-- User-friendly interface for easy navigation
-- Secure payment gateway integration
-- Real-time payment tracking and notifications
-- Bill reminders and history
-- Multi-language support
-- Admin dashboard for managing utilities and users
-
-Built with a focus on security and user experience, this platform ensures that users can manage their utility payments with confidence and ease.`,
-    demoLink: "https://dangopay.dangotechconcepts.com/#/make-utility-payment",
-    stack: [
-      {
-        name: "ReactJs",
-        icon: <DiReact />,
-        iconColor: "skyblue",
-      },
-      {
-        name: "TailwindCSS",
-        icon: <SiAdobexd />,
-        iconColor: "skyblue",
-      },
-      {
-        name: "ShadcnUI",
-        icon: <SiAdobexd />,
-        iconColor: "skyblue",
-      },
-    ],
+    title: "Yookatale — Grocery Marketplace",
+    image: ecommerce1,
+    category: "Products",
+    description: `Uganda's online grocery and food-delivery marketplace. Owned the web platform end to end: catalogue,
+    search, multi-method checkout, order tracking, meal-plan subscriptions, loyalty and a vendor portal. Cut load time
+    by 20% with Next.js optimisation and code splitting.`,
+    stack: ["Next.js", "TypeScript", "Node.js", "MongoDB"],
   },
   {
     id: 8,
     title: "Recipe App",
     image: recipe,
-    category: "Web",
-    description: `Developed a feature-rich Recipe App that allows users to discover, save, and share their favorite recipes. The app provides a seamless experience for food enthusiasts to explore a wide variety of dishes and cooking techniques.
-Key Features:
-- Extensive recipe database with search and filter options
-- User accounts for saving and sharing recipes
-- Step-by-step cooking instructions with images
-- Ingredient lists with nutritional information
-- Social sharing capabilities
-- Responsive design for mobile and desktop use
-
-Built with a focus on user experience and community engagement, this app is perfect for anyone looking to enhance their culinary skills and connect with fellow food lovers.`,
-    demoLink: "https://receipe-task-management.vercel.app",
-    stack: [
-      {
-        name: "ReactJs",
-        icon: <DiReact />,
-        iconColor: "skyblue",
-      },
-      {
-        name: "TailwindCSS",
-        icon: <SiAdobexd />,
-        iconColor: "skyblue",
-      },
-      {
-        name: "ShadcnUI",
-        icon: <SiAdobexd />,
-        iconColor: "skyblue",
-      },
-    ],
+    category: "Side Projects",
+    description: `Discover, save and share recipes with search and filters, step-by-step instructions and ingredient
+    lists, in a responsive interface.`,
+    links: [{ label: "Live", url: "https://receipe-task-management.vercel.app" }],
+    stack: ["React", "Tailwind", "Shadcn/UI"],
   },
   {
     id: 9,
-    title: "Rocket Launch",
+    title: "Space Travelers' Hub",
     image: rocket,
-    category: "Web",
-    description: `Developed a visually stunning Rocket Launch website that provides users with real-time information about upcoming rocket launches, mission details, and launch history. The website offers an engaging experience for space enthusiasts and professionals alike.
-Key Features:
-- Real-time launch schedule with countdown timers
-- Detailed mission profiles with objectives and payload information
-- Interactive launch history with past missions and outcomes
-- News and updates related to space exploration
-- Responsive design for optimal viewing on all devices
-
-Built with a focus on user engagement and accessibility, this website serves as a comprehensive resource for anyone interested in the exciting world of rocket launches and space exploration.`,
-    demoLink: "https://amos-space-traver-hub.netlify.app/",
-    stack: [
-      {
-        name: "NextJs",
-        icon: <SiAdobexd />,
-        iconColor: "skyblue",
-      },
-      {
-        name: "TailwindCSS",
-        icon: <SiAdobexd />,
-        iconColor: "skyblue",
-      },
-      {
-        name: "ShadcnUI",
-        icon: <SiAdobexd />,
-        iconColor: "skyblue",
-      },
-    ],
-  },
-];
-
-export const clients = [
-  {
-    image: client1,
-    name: "Samuel Eze",
-    review: `You transformed our content into pure magic!`,
-  },
-  {
-    image: client2,
-    name: "Richael Linda",
-    review: ` Our brand's success soared to new heights, thanks to Muhumuza's exceptional content creation abilities`,
-  },
-  {
-    image: client3,
-    name: "Gloria Chiwendu",
-    review: ` Our collaboration with Muhumuza for content creation has been an absolute game-changer, delivering outstanding results that have left us thrilled and inspired.`,
-  },
-  {
-    image: client4,
-    name: "Precious Stone",
-    review: ` Through the fusion of code and imagination, Muhumuza crafts digital wonders that transcend the boundaries of possibility.`,
-  },
-  {
-    image: client5,
-    name: "Ndubisi John",
-    review: ` From seamless user experiences to cutting-edge functionality, Muhumuza is the architect of captivating web solutions that leave a lasting impression.`,
+    category: "Side Projects",
+    description: `Rocket and mission explorer with launch details, mission profiles and launch history, built as a
+    responsive single-page app.`,
+    links: [{ label: "Live", url: "https://amos-space-traver-hub.netlify.app/" }],
+    stack: ["Next.js", "Tailwind", "Shadcn/UI"],
   },
 ];
 
@@ -539,23 +316,25 @@ export const contactOptions = [
   {
     title: "Email",
     value: "kinyeramo@gmail.com",
+    href: "mailto:kinyeramo@gmail.com",
     icon: <MdOutlineAlternateEmail />,
   },
   {
-    title: "Phone Number",
-    value: "+256777349597",
+    title: "Phone",
+    value: "+256 777 349 597",
+    href: "tel:+256777349597",
     icon: <IoCallOutline />,
   },
   {
-    title: "Address",
-    value: "Kampala Uganda",
+    title: "Location",
+    value: "Uganda · Open to remote",
     icon: <IoLocationOutline />,
   },
 ];
 
 export const socialHandles = [
   {
-    name: "Linkedin",
+    name: "LinkedIn",
     icon: <FaLinkedin />,
     link: "https://www.linkedin.com/in/kinyera-amos/",
   },
@@ -565,34 +344,8 @@ export const socialHandles = [
     link: "https://github.com/bigmosi",
   },
   {
-    name: "Twitter",
+    name: "X (Twitter)",
     icon: <FaXTwitter />,
-    link: "https://x.com/@kinyera_amos",
-  },
-];
-
-export const footer = [
-  {
-    title: "Explore",
-    routes: [
-      { name: "About Me", id: "about" },
-      { name: "Skill", id: "skill" },
-    ],
-  },
-  {
-    title: "Trusted",
-    routes: [
-      { name: "Services", id: "services" },
-      { name: "Projects", id: "projects" },
-      { name: "Testimonials", id: "testimonials" },
-    ],
-  },
-  {
-    title: "Others",
-    routes: [
-      { name: "Privacy Policy" },
-      { name: "Terms and Conditions" },
-      { name: "Cookie Policy" },
-    ],
+    link: "https://x.com/kinyera_amos",
   },
 ];

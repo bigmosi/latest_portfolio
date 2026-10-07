@@ -36,17 +36,20 @@ const Projects = () => {
        <div className="section-header">
         <h1 className="heading-1">
           <span className="gradient-text">
-            Projects
+            Selected Work
           </span>
         </h1>
+        <p className="sub-title muted">
+          Products, enterprise systems and mobile apps I've built — most of them in production today.
+        </p>
       </div>
       <ProjectNavigation tabs={getTabs()} onChange={setProjects} />
       <div className="projects-container">
         {
-          activeProjects.map((project,index) => (
+          activeProjects.map((project) => (
             <ProjectCard 
             {...project}
-            key={index}
+            key={project.id}
             className={load ? 'zoom' : ''}
             />
           ))

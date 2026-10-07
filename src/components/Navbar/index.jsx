@@ -10,13 +10,15 @@ import SocialHandles from '../../commons/SocialHandles'
 const Navbar = () => {
   const [openSidebar, setOpenSidebar] = useState(false);
   return (
-    <navbar className='navbar flex '>
+    <nav className='navbar flex'>
       {openSidebar ? <div className="overlay" onClick={() => setOpenSidebar(!openSidebar)} /> : '' }
       
     <Logo />
       <div className={`box flex-center tabs-group sidebar ${openSidebar ? 'visible' : ''}`}>
         <div 
         className="flex-center icon-wrapper cancel-btn"
+        role="button"
+        aria-label="Close menu"
         onClick={() => setOpenSidebar(!openSidebar)}
         >
           <FaTimes/> 
@@ -26,6 +28,7 @@ const Navbar = () => {
           to={tab.id}
           smooth={true}
           spy={true}
+          offset={-70}
           className='tab'
           activeClass='active'
           key={index}
@@ -40,25 +43,21 @@ const Navbar = () => {
         <Link
         to='contact'
         smooth={true}
+        offset={-70}
         className='btn primary contact-btn'
         >
-        Hire Me!
-        </Link>
-        <Link
-        to='services'
-        smooth={true}
-        className='btn services-btn'
-        >
-        Services
+        Hire Me
         </Link>
         <div 
         className='flex-center icon-wrapper menu-btn'
+        role="button"
+        aria-label="Open menu"
         onClick={() => setOpenSidebar(!openSidebar)}
         >
           <HiMenu />
         </div>
       </div>
-    </navbar>
+    </nav>
   )
 }
 
