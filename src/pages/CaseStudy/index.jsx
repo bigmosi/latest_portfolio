@@ -72,12 +72,6 @@ const CaseStudy = () => {
         )}
       </figure>
 
-      {study.gallery?.map((shot) => (
-        <figure className="cs-hero" key={shot.src}>
-          <img src={shot.src} alt={shot.alt} loading="lazy" />
-        </figure>
-      ))}
-
       <section className="cs-section">
         <h2>Overview</h2>
         <p>{study.overview}</p>
@@ -99,6 +93,42 @@ const CaseStudy = () => {
           ))}
         </div>
       </section>
+
+      {study.webScreens && (
+        <section className="cs-section">
+          <h2>Web app</h2>
+          <div className="cs-screens cs-screens--web">
+            {study.webScreens.map((screen) => (
+              <figure key={screen.src}>
+                <img src={screen.src} alt={`${study.title} ${screen.caption.toLowerCase()} screen`} loading="lazy" />
+                <figcaption>{screen.caption}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {(study.video || study.screens) && (
+        <section className="cs-section">
+          <h2>Mobile app</h2>
+          {study.video && (
+            <figure className="cs-video">
+              <video src={study.video.src} poster={study.video.poster} controls muted playsInline preload="none" />
+              <figcaption>{study.video.caption}</figcaption>
+            </figure>
+          )}
+          {study.screens && (
+            <div className="cs-screens" style={{ "--cols": study.screens.length === 4 ? 4 : 3 }}>
+              {study.screens.map((screen) => (
+                <figure key={screen.src}>
+                  <img src={screen.src} alt={`${study.title} ${screen.caption.toLowerCase()} screen`} loading="lazy" />
+                  <figcaption>{screen.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
+          )}
+        </section>
+      )}
 
       <section className="cs-section">
         <h2>Key decisions</h2>

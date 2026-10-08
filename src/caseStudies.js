@@ -1,6 +1,21 @@
 import nyumbanappMarket from "./assets/nyumbanapp-market.png";
-import nyumbanappSaved from "./assets/nyumbanapp-saved.png";
+import nyumbanappWebLanding from "./assets/nyumbanapp-web-landing.jpg";
+import nyumbanappWebSignin from "./assets/nyumbanapp-web-signin.jpg";
+import nyumbanappWebSaved from "./assets/nyumbanapp-web-saved.jpg";
+import nyumbanappWebForum from "./assets/nyumbanapp-web-forum.jpg";
+import nyumbanappMobileFeed from "./assets/nyumbanapp-mobile-feed.jpg";
+import nyumbanappMobileFeedScrolled from "./assets/nyumbanapp-mobile-feed-scrolled.jpg";
+import nyumbanappMobileMenu from "./assets/nyumbanapp-mobile-menu.jpg";
+import nyumbanappMobileTours from "./assets/nyumbanapp-mobile-tours.jpg";
+import nyumbanappMobileNotifications from "./assets/nyumbanapp-mobile-notifications.jpg";
+import nyumbanappMobileProfile from "./assets/nyumbanapp-mobile-profile.jpg";
+import nyumbanappDemo from "./assets/nyumbanapp-demo.mp4";
+import nyumbanappDemoPoster from "./assets/nyumbanapp-demo-poster.jpg";
 import claritydesk from "./assets/claritydesk.jpg";
+import claritydeskMobileHome from "./assets/claritydesk-mobile-home.jpg";
+import claritydeskMobileOffline from "./assets/claritydesk-mobile-offline.jpg";
+import claritydeskMobileEconomy from "./assets/claritydesk-mobile-economy.jpg";
+import claritydeskMobileExplainers from "./assets/claritydesk-mobile-explainers.jpg";
 import rtvDashboard from "./assets/rtv-ims-dashboard.png";
 
 // Case studies are drafted from commit history. `todo` items are only shown in
@@ -75,7 +90,25 @@ export const caseStudies = [
     title: "NyumbanApp",
     tagline: "Making rent payments in Uganda traceable for landlords and tenants.",
     image: nyumbanappMarket,
-    gallery: [{ src: nyumbanappSaved, alt: "NyumbanApp saved listings screen" }],
+    webScreens: [
+      { src: nyumbanappWebLanding, caption: "Landing page" },
+      { src: nyumbanappWebSignin, caption: "Sign in" },
+      { src: nyumbanappWebSaved, caption: "Saved properties" },
+      { src: nyumbanappWebForum, caption: "Community forum" },
+    ],
+    video: {
+      src: nyumbanappDemo,
+      poster: nyumbanappDemoPoster,
+      caption: "Tenant walkthrough: search, property details, settings, rent, agreements, complaints, saved properties, tours and notifications",
+    },
+    screens: [
+      { src: nyumbanappMobileFeed, caption: "Listings feed" },
+      { src: nyumbanappMobileFeedScrolled, caption: "Browsing listings" },
+      { src: nyumbanappMobileMenu, caption: "Account menu" },
+      { src: nyumbanappMobileTours, caption: "Tour requests" },
+      { src: nyumbanappMobileNotifications, caption: "Notifications" },
+      { src: nyumbanappMobileProfile, caption: "Profile" },
+    ],
     period: "2025 — Present",
     role: "Full Stack Developer",
     team: "Product team of about six · I own payments, refunds and agreement flows, and I'm the largest contributor to the admin panel",
@@ -149,6 +182,12 @@ export const caseStudies = [
     title: "ClarityDesk",
     tagline: "Getting verified election information to South Sudanese readers — even offline.",
     image: claritydesk,
+    screens: [
+      { src: claritydeskMobileHome, caption: "Fact-checks feed" },
+      { src: claritydeskMobileOffline, caption: "Offline mode" },
+      { src: claritydeskMobileEconomy, caption: "Economy category" },
+      { src: claritydeskMobileExplainers, caption: "Explainers" },
+    ],
     period: "2026",
     role: "Mobile Developer (contract, via Dango Tech)",
     team: "Three-person team · I owned push notifications and the iOS release",

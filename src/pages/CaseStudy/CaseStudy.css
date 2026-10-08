@@ -131,6 +131,49 @@
 .cs-decisions p{
     font-size: 15px;
 }
+.cs-video{
+    max-width: 320px;
+    margin: 0 auto 32px;
+}
+.cs-video video{
+    display: block;
+    width: 100%;
+    aspect-ratio: 540 / 1174;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    background: var(--bg-raised);
+}
+.cs-video figcaption{
+    margin-top: 8px;
+    color: var(--text-faint);
+    font-size: 13px;
+    text-align: center;
+}
+.cs-screens{
+    display: grid;
+    grid-template-columns: repeat(var(--cols, 3), 1fr);
+    gap: 20px 16px;
+}
+.cs-screens img{
+    width: 100%;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+}
+.cs-screens--web{
+    grid-template-columns: 1fr 1fr;
+}
+.cs-screens--web img{
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 10px;
+}
+.cs-screens figcaption{
+    margin-top: 8px;
+    color: var(--text-faint);
+    font-size: 13px;
+    text-align: center;
+}
 .cs-decisions{
     list-style: none;
     counter-reset: decision;
@@ -192,6 +235,12 @@
     }
     .cs-facts,
     .cs-grid{
+        grid-template-columns: 1fr;
+    }
+    .cs-screens{
+        grid-template-columns: 1fr 1fr;
+    }
+    .cs-screens--web{
         grid-template-columns: 1fr;
     }
     .cs-decisions li{
