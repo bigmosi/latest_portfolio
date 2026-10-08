@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import './Contact.css'
-import {contactOptions} from '../../sources'
 import emailjs from '@emailjs/browser';
+import { profile } from '../../sources'
 
 const Contact = () => {
   const form = useRef();
@@ -25,71 +25,49 @@ const Contact = () => {
         },
       );
   };
+
   return (
-    <section id='contact'>
-      <div className="wrapper">
-        <div className="contact-options">
-          {
-            contactOptions.map((option) => {
-              const content = (
-                <>
-                  <div className="flex-center icon-wrapper">
-                    {option.icon}
-                  </div>
-                  <h4 className="muted">{option.title}</h4>
-                  <h3 className="value">{option.value}</h3>
-                </>
-              );
-              return option.href ? (
-                <a href={option.href} className="flex-center option" data-aos='fade-up' key={option.title}>
-                  {content}
-                </a>
-              ) : (
-                <div className="flex-center option" data-aos='fade-up' key={option.title}>
-                  {content}
-                </div>
-              );
-            })
-          }
-        </div>
-        <div className="contact-form" data-aos='fade-up'>
-          <div className="top">
-            <h1 className="title">
-              <span className="gradient-text">Let's Work Together</span>
-            </h1>
-            <p className="muted">
-              Hiring for a full stack role, or need a web app, API or mobile app built?
-              Send me a few details and I'll get back to you within 24 hours.
-            </p>
-          </div>
-          <form ref={form} onSubmit={sendEmail}>
-              <div className="middle">
-                <div className="flex row">
-                  <input type="text" placeholder='First name' name='firstname' className='control' aria-label='First name' required />
-                  <input type="text" placeholder='Last name' name='lastname' className='control' aria-label='Last name' />
-                </div>
-                <div className="flex row">
-                  <input type="email" placeholder='Email address' name='email' className='control' aria-label='Email address' required />
-                  <input type="tel" placeholder='Phone number (optional)' name='phone' className='control' aria-label='Phone number' />
-                </div>
-                <textarea name="message" cols={30} rows={8} placeholder='Tell me about the role or project' className='control' aria-label='Message' required></textarea>
-              </div>
-              <div className="flex-center bottom">
-                <button type="submit" className='btn primary' disabled={status === 'sending'}>
-                  {status === 'sending' ? 'Sending…' : 'Send Message'}
-                </button>
-                {status === 'success' && (
-                  <p className="form-status success" role="status">Thanks — your message has been sent. I'll be in touch soon.</p>
-                )}
-                {status === 'error' && (
-                  <p className="form-status error" role="alert">
-                    Something went wrong. Please email me directly at <a href="mailto:kinyeramo@gmail.com">kinyeramo@gmail.com</a>.
-                  </p>
-                )}
-              </div>
-          </form>
-        </div>
+    <section id='contact' className='section' aria-label='Contact'>
+      <h2 className="section-title">Contact</h2>
+      <h3 className="contact-heading">Let's build something</h3>
+      <p>
+        I'm open to full stack and senior front-end roles (remote or in Uganda) and to contract work on
+        web apps, APIs and mobile apps. The fastest way to reach me is email — I reply within a day.
+      </p>
+      <div className="contact-direct">
+        <a href={`mailto:${profile.email}`} className="contact-btn">{profile.email}</a>
+        <a href={`tel:${profile.phone.replace(/\s/g, '')}`} className="text-link">{profile.phone}</a>
       </div>
+
+      <form ref={form} onSubmit={sendEmail} className="contact-form">
+        <div className="row">
+          <label>
+            <span>Name</span>
+            <input type="text" name='firstname' autoComplete="name" required />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name='email' autoComplete="email" required />
+          </label>
+        </div>
+        <label>
+          <span>Message</span>
+          <textarea name="message" rows={5} placeholder='Tell me about the role or project' required></textarea>
+        </label>
+        <div className="form-footer">
+          <button type="submit" className='submit' disabled={status === 'sending'}>
+            {status === 'sending' ? 'Sending…' : 'Send message'}
+          </button>
+          {status === 'success' && (
+            <p className="form-status success" role="status">Thanks — your message is on its way.</p>
+          )}
+          {status === 'error' && (
+            <p className="form-status error" role="alert">
+              That didn't go through. Please email me at <a className="text-link" href={`mailto:${profile.email}`}>{profile.email}</a>.
+            </p>
+          )}
+        </div>
+      </form>
     </section>
   )
 }

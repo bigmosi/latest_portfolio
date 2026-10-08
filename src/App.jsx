@@ -1,38 +1,41 @@
+import { useEffect, useRef } from "react"
+import Sidebar from "./components/Sidebar"
 import About from "./components/About"
-import Contact from "./components/Contact"
 import Experience from "./components/Experience"
-import Footer from "./components/Footer"
-import Hero from "./components/Hero"
-import Navbar from "./components/Navbar"
 import Projects from "./components/Projects"
-import Skill from "./components/Skill"
-import Services from "./components/Services"
-import Aos from 'aos'
-import { useEffect } from "react"
-import 'aos/dist/aos.css'
+import Contact from "./components/Contact"
+import Footer from "./components/Footer"
 
 function App() {
+  const spotlight = useRef(null)
+
   useEffect(() => {
-    Aos.init({
-      duration: 500,
-      easing: 'ease-in-sine',
-      once: true
-    })
-  },[])
+    const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches
+    if (!canHover) return
+    const onMove = (e) => {
+      if (spotlight.current) {
+        spotlight.current.style.background =
+          `radial-gradient(600px at ${e.clientX}px ${e.clientY}px, var(--spotlight), transparent 80%)`
+      }
+    }
+    window.addEventListener('mousemove', onMove)
+    return () => window.removeEventListener('mousemove', onMove)
+  }, [])
 
   return (
     <>
-     <Navbar />
-     <main>
-       <Hero />
-       <About />
-       <Experience />
-       <Skill />
-       <Services />
-       <Projects />
-       <Contact />
-     </main>
-     <Footer />
+      <a href="#content" className="skip-link">Skip to content</a>
+      <div className="spotlight" ref={spotlight} aria-hidden="true" />
+      <div className="layout">
+        <Sidebar />
+        <main id="content">
+          <About />
+          <Experience />
+          <Projects />
+          <Contact />
+          <Footer />
+        </main>
+      </div>
     </>
   )
 }

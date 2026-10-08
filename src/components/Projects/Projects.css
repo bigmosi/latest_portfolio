@@ -1,16 +1,89 @@
-#projects{
-    overflow: hidden;
+#projects .chips{
+    list-style: none;
 }
-#projects .projects-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 28px;
-    margin-top: 40px;
+#projects .thumb{
+    order: 0;
+    margin-top: 4px;
+    aspect-ratio: 16 / 10;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 2px solid var(--border);
+    background: var(--primary-soft);
+    transition: border-color var(--transition);
+}
+#projects .card:hover .thumb{
+    border-color: var(--primary-soft);
+}
+#projects .thumb img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+#projects .thumb-placeholder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--primary);
+    font-weight: 700;
+    letter-spacing: 0.08em;
 }
 
-/* Responsive Code */
-@media (max-width: 400px){
-    #projects .projects-container{
-        grid-template-columns: 100%;
+#projects .archive-title{
+    margin: 80px 0 16px;
+    color: var(--text-strong);
+    font-size: 16px;
+    font-weight: 600;
+}
+#projects .archive{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    text-align: left;
+}
+#projects .archive th{
+    padding: 0 12px 12px 0;
+    color: var(--text-strong);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+#projects .archive td{
+    padding: 14px 12px 14px 0;
+    border-top: 1px solid var(--border);
+    vertical-align: top;
+}
+#projects .archive .year{
+    color: var(--text-faint);
+    width: 56px;
+}
+#projects .archive .project-name{
+    color: var(--text-strong);
+    font-weight: 500;
+}
+#projects .archive .project-name a{
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+#projects .archive .project-name a:hover{
+    color: var(--primary);
+}
+
+@media (max-width: 640px){
+    #projects .thumb{
+        order: 2;
+        max-width: 260px;
+        margin-top: 12px;
+    }
+    #projects .hide-sm{
+        display: none;
+    }
+}
+@media (max-width: 900px){
+    #projects .hide-md{
+        display: none;
     }
 }
