@@ -1,5 +1,7 @@
-import nyumbanapp from "./assets/nyumbanapp.jpg";
+import nyumbanappMarket from "./assets/nyumbanapp-market.png";
+import nyumbanappSaved from "./assets/nyumbanapp-saved.png";
 import claritydesk from "./assets/claritydesk.jpg";
+import rtvDashboard from "./assets/rtv-ims-dashboard.png";
 
 // Case studies are drafted from commit history. `todo` items are only shown in
 // development so the gaps can be filled before publishing.
@@ -8,6 +10,7 @@ export const caseStudies = [
     slug: "rtv-ims",
     title: "RTV Implementation Management System",
     tagline: "Turning field visits in four countries into dashboards program teams can act on.",
+    image: rtvDashboard,
     period: "Oct 2025 — Present",
     role: "Senior Front-End Developer",
     team: "Six-person engineering team · second-largest contributor (300+ commits in year one)",
@@ -63,7 +66,6 @@ export const caseStudies = [
     is the source for program monitoring and adoption reporting.`,
     todo: [
       "Add scale: number of staff using it, households tracked, visits logged per month.",
-      "Add a screenshot of a dashboard with real data blurred (replace the placeholder).",
       "Add one measurable win, e.g. reports that used to take days now take minutes.",
       "Confirm it's OK to describe this internal system publicly at this level of detail.",
     ],
@@ -72,7 +74,8 @@ export const caseStudies = [
     slug: "nyumbanapp",
     title: "NyumbanApp",
     tagline: "Making rent payments in Uganda traceable for landlords and tenants.",
-    image: nyumbanapp,
+    image: nyumbanappMarket,
+    gallery: [{ src: nyumbanappSaved, alt: "NyumbanApp saved listings screen" }],
     period: "2025 — Present",
     role: "Full Stack Developer",
     team: "Product team of about six · I own payments, refunds and agreement flows, and I'm the largest contributor to the admin panel",

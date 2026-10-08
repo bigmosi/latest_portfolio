@@ -1,6 +1,7 @@
-import nyumbanapp from "./assets/nyumbanapp.jpg";
+import nyumbanapp from "./assets/nyumbanapp-market.png";
 import claritydesk from "./assets/claritydesk.jpg";
 import billing from "./assets/billing.png";
+import rtvDashboard from "./assets/rtv-ims-dashboard.png";
 import { FaXTwitter, FaLinkedin, FaGithub } from "react-icons/fa6";
 import { MdOutlineAlternateEmail } from "react-icons/md";
 
@@ -120,6 +121,7 @@ export const featuredProjects = [
   {
     title: "RTV Implementation Management System",
     caseStudy: "rtv-ims",
+    image: rtvDashboard,
     description: `Internal platform for Raising The Village field teams in four countries: agriculture, savings groups,
     training, leadership and household coaching, with adoption dashboards and WorkMate, an embedded AI assistant.`,
     note: "Internal system · mobile app on both stores",

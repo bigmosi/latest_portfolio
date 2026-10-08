@@ -72,6 +72,12 @@ const CaseStudy = () => {
         )}
       </figure>
 
+      {study.gallery?.map((shot) => (
+        <figure className="cs-hero" key={shot.src}>
+          <img src={shot.src} alt={shot.alt} loading="lazy" />
+        </figure>
+      ))}
+
       <section className="cs-section">
         <h2>Overview</h2>
         <p>{study.overview}</p>
