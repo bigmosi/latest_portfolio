@@ -1,29 +1,40 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import './Contact.css'
-import emailjs from '@emailjs/browser';
 import { profile } from '../../sources'
 
 const Contact = () => {
-  const form = useRef();
   const [status, setStatus] = useState('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
-    setStatus('sending');
+    const form = e.currentTarget;
 
-    emailjs
-      .sendForm('service_5fhni6l', 'template_tl4meir', form.current, {
-        publicKey: '5y582uX0EBJrUO9q5',
-      })
-      .then(
-        () => {
-          setStatus('success');
-          form.current.reset();
-        },
-        () => {
-          setStatus('error');
-        },
-      );
+    if (!profile.formspreeId) {
+      setErrorMessage('The contact form isn\'t connected yet.');
+      setStatus('error');
+      return;
+    }
+
+    setStatus('sending');
+    try {
+      const response = await fetch(`https://formspree.io/f/${profile.formspreeId}`, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      });
+      if (response.ok) {
+        setStatus('success');
+        form.reset();
+        return;
+      }
+      const data = await response.json().catch(() => ({}));
+      setErrorMessage(data.errors?.map((err) => err.message).join(', ') || 'That didn\'t go through.');
+      setStatus('error');
+    } catch {
+      setErrorMessage('That didn\'t go through — check your connection.');
+      setStatus('error');
+    }
   };
 
   return (
@@ -39,11 +50,13 @@ const Contact = () => {
         <a href={`tel:${profile.phone.replace(/\s/g, '')}`} className="text-link">{profile.phone}</a>
       </div>
 
-      <form ref={form} onSubmit={sendEmail} className="contact-form">
+      <form onSubmit={sendEmail} className="contact-form">
+        <input type="hidden" name="_subject" value="New message from your portfolio" />
+        <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" className="honeypot" aria-hidden="true" />
         <div className="row">
           <label>
             <span>Name</span>
-            <input type="text" name='firstname' autoComplete="name" required />
+            <input type="text" name='name' autoComplete="name" required />
           </label>
           <label>
             <span>Email</span>
@@ -63,7 +76,7 @@ const Contact = () => {
           )}
           {status === 'error' && (
             <p className="form-status error" role="alert">
-              That didn't go through. Please email me at <a className="text-link" href={`mailto:${profile.email}`}>{profile.email}</a>.
+              {errorMessage} Please email me at <a className="text-link" href={`mailto:${profile.email}`}>{profile.email}</a>.
             </p>
           )}
         </div>

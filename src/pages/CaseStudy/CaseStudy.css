@@ -1,0 +1,200 @@
+.case-study{
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+}
+.case-study .back-link{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 14px;
+}
+.case-study .back-link svg{
+    transition: transform var(--transition);
+}
+.case-study .back-link:hover svg{
+    transform: translateX(-3px);
+}
+.cs-eyebrow{
+    margin-top: 48px;
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+.cs-title{
+    margin-top: 8px;
+    color: var(--text-strong);
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+.cs-tagline{
+    margin-top: 16px;
+    font-size: 19px;
+    line-height: 1.5;
+}
+.cs-facts{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 32px;
+    margin-top: 40px;
+    padding: 24px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+}
+.cs-facts .wide{
+    grid-column: 1 / -1;
+}
+.cs-facts dt{
+    color: var(--text-faint);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+.cs-facts dd{
+    color: var(--text-strong);
+}
+.cs-facts .chips{
+    list-style: none;
+    margin-top: 4px;
+}
+.cs-links{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.cs-hero{
+    margin-top: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--primary-soft);
+}
+.cs-hero img{
+    width: 100%;
+}
+.cs-hero-placeholder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 16 / 7;
+    padding: 24px;
+    text-align: center;
+    color: var(--primary);
+    font-size: 24px;
+    font-weight: 700;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(95, 211, 63, 0.18), transparent 60%),
+        var(--bg);
+}
+.cs-section{
+    margin-top: 64px;
+}
+.cs-section h2{
+    color: var(--text-strong);
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 16px;
+}
+.cs-section h3{
+    color: var(--text-strong);
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+.cs-section p{
+    font-size: 16px;
+}
+.cs-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+.cs-item{
+    padding: 20px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: var(--bg-raised);
+}
+.cs-item p,
+.cs-decisions p{
+    font-size: 15px;
+}
+.cs-decisions{
+    list-style: none;
+    counter-reset: decision;
+}
+.cs-decisions li{
+    counter-increment: decision;
+    position: relative;
+    padding-left: 48px;
+}
+.cs-decisions li + li{
+    margin-top: 28px;
+}
+.cs-decisions li::before{
+    content: counter(decision, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.6;
+}
+.cs-todo{
+    margin-top: 64px;
+    padding: 20px 24px;
+    border-radius: var(--radius);
+    border: 1px dashed #e0b84a;
+    background: rgba(224, 184, 74, 0.08);
+    color: #f0d68a;
+    font-size: 14px;
+}
+.cs-todo span{
+    color: #b9a36a;
+}
+.cs-todo ul{
+    margin: 10px 0 0 18px;
+}
+.cs-todo li + li{
+    margin-top: 4px;
+}
+.cs-next{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+}
+@media (max-width: 640px){
+    .case-study{
+        padding: 40px 16px 72px;
+    }
+    .cs-title{
+        font-size: 34px;
+    }
+    .cs-tagline{
+        font-size: 17px;
+    }
+    .cs-facts,
+    .cs-grid{
+        grid-template-columns: 1fr;
+    }
+    .cs-decisions li{
+        padding-left: 36px;
+    }
+}

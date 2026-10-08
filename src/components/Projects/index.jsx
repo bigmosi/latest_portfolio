@@ -1,7 +1,8 @@
 import React from 'react'
 import './Projects.css'
 import { featuredProjects, archive } from '../../sources'
-import { FiArrowUpRight } from 'react-icons/fi'
+import { Link } from 'react-router-dom'
+import { FiArrowUpRight, FiArrowRight } from 'react-icons/fi'
 
 const Projects = () => {
   return (
@@ -20,7 +21,12 @@ const Projects = () => {
               </div>
               <div>
                 <h3 className="card-title">
-                  {project.url ? (
+                  {project.caseStudy ? (
+                    <Link to={`/work/${project.caseStudy}`} aria-label={`${project.title} — read the case study`}>
+                      <span>{project.title}</span>
+                      <FiArrowRight />
+                    </Link>
+                  ) : project.url ? (
                     <a href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`${project.title} (opens in a new tab)`}>
                       <span>{project.title}</span>
                       <FiArrowUpRight />
@@ -31,9 +37,19 @@ const Projects = () => {
                 </h3>
                 <p className="card-body">{project.description}</p>
                 {project.note && <p className="card-body card-sub">{project.note}</p>}
-                {project.links && (
+                {(project.caseStudy || project.links) && (
                   <div className="inner-links">
-                    {project.links.map((link) => (
+                    {project.caseStudy && (
+                      <Link to={`/work/${project.caseStudy}`} className="case-link">
+                        Case study <FiArrowRight />
+                      </Link>
+                    )}
+                    {project.caseStudy && project.url && (
+                      <a href={project.url} target="_blank" rel="noopener noreferrer">
+                        Website <FiArrowUpRight />
+                      </a>
+                    )}
+                    {(project.links || []).map((link) => (
                       <a href={link.url} target="_blank" rel="noopener noreferrer" key={link.url}>
                         {link.label} <FiArrowUpRight />
                       </a>

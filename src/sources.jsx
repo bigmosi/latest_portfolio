@@ -12,6 +12,8 @@ export const profile = {
   email: "kinyeramo@gmail.com",
   phone: "+256 777 349 597",
   resume: "/Kinyera_Amos_CV.pdf",
+  // Formspree form ID — the part after formspree.io/f/ in your form's endpoint.
+  formspreeId: "myekebqp",
 };
 
 export const sections = [
@@ -46,17 +48,17 @@ export const experience = [
     role: "Full Stack Developer",
     company: "NyumbanApp",
     url: "https://nyumbanapp.com",
-    summary: `Building a rental platform connecting landlords and tenants across Uganda — the web app, the React Native
-    mobile app and the community forum. Listings, applications, tour scheduling, in-app messaging and role-based
-    access, with Dusupay mobile money and bank payments showing real-time status to both sides.`,
-    stack: ["React Native", "Next.js", "TypeScript", "TanStack", "Zod", "Tailwind CSS", "Node.js", "PostgreSQL"],
+    summary: `Part of the team building a rental platform for landlords and tenants across Uganda. I own the money
+    flows — rent payments through Flutterwave, refunds, advance-rent credit and termination settlements — across the
+    Node.js backend, the web app and the React Native app, and I'm the largest contributor to the admin panel.`,
+    stack: ["React Native", "React", "TypeScript", "Node.js", "Express", "Prisma", "PostgreSQL", "Flutterwave"],
   },
   {
     period: "Jan 2025 — Jan 2026",
     role: "Full Stack Developer (Contract)",
     company: "Dango Tech Concept",
-    summary: `Built ClarityDesk, an offline-first civic app for the South Sudan 2026 elections, live on both stores;
-    Dangopay, a Flutter rent and water-bill payment app processing real mobile money; Nyumba Yo and Wellowe; and a
+    summary: `Shipped ClarityDesk, an offline-first civic app for the South Sudan 2026 elections, with a three-person
+    team — I owned push notifications and the iOS App Store release. Also built Dangopay, a Flutter rent and water-bill payment app processing real mobile money; Nyumba Yo and Wellowe; and a
     Next.js platform with Docker, NGINX and CI/CD set up from zero, streaming OpenAI responses from FastAPI over
     WebSocket.`,
     stack: ["React Native", "Flutter", "Next.js", "TanStack", "FastAPI", "PostgreSQL", "Docker"],
@@ -90,6 +92,7 @@ export const education = [
 export const featuredProjects = [
   {
     title: "NyumbanApp",
+    caseStudy: "nyumbanapp",
     image: nyumbanapp,
     url: "https://nyumbanapp.com",
     description: `Rental platform for Uganda on web and mobile. Landlords list properties, manage units and track rent;
@@ -103,6 +106,7 @@ export const featuredProjects = [
   },
   {
     title: "ClarityDesk",
+    caseStudy: "claritydesk",
     image: claritydesk,
     url: "https://claritydesk.org",
     description: `Civic fact-checking platform for the South Sudan 2026 elections — fact-checks, election updates and an
@@ -115,6 +119,7 @@ export const featuredProjects = [
   },
   {
     title: "RTV Implementation Management System",
+    caseStudy: "rtv-ims",
     description: `Internal platform for Raising The Village field teams in four countries: agriculture, savings groups,
     training, leadership and household coaching, with adoption dashboards and WorkMate, an embedded AI assistant.`,
     note: "Internal system · mobile app on both stores",
