@@ -15,6 +15,8 @@ export const profile = {
   resume: "/Kinyera_Amos_CV.pdf",
   // Formspree form ID — the part after formspree.io/f/ in your form's endpoint.
   formspreeId: "myekebqp",
+  // Google Analytics 4 measurement ID (G-XXXXXXXXXX). Leave empty to turn analytics off.
+  gaMeasurementId: "G-X54LR7QJE4",
 };
 
 export const sections = [

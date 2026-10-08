@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Contact.css'
 import { profile } from '../../sources'
+import { trackEvent } from '../../analytics'
 
 const Contact = () => {
   const [status, setStatus] = useState('idle');
@@ -25,6 +26,7 @@ const Contact = () => {
       });
       if (response.ok) {
         setStatus('success');
+        trackEvent('generate_lead', { method: 'contact_form' });
         form.reset();
         return;
       }
